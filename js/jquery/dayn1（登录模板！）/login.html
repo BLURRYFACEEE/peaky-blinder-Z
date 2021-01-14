@@ -139,9 +139,9 @@
             height: 350px; */
             padding: 10px;
             font-size: 20px;
-            display: none;
+            /* display: none; */
             opacity: 0;
-            transition: all 1s;
+            transition: width 1s, height 1s, opacity 1s;
             z-index: 233;
         }
 
@@ -238,7 +238,7 @@
 
         .areaStretch {
             width: 100%;
-            height: 350px;
+            height: 300px;
         }
 
         .reverse {
@@ -371,28 +371,47 @@
             }
         })
         // 点击的区域
-        let pullDownAreaBlurClose = false
         // 下拉区域blur事件 bs ni cai zhi dao ma 
+        // $('.pullDownArea').blur(function () {
+        //     console.log('blur')
+        //     $('.arror').removeClass('reverse')
+        //     $('.pullDownArea').removeClass('show')
+        //     setTimeout(function () {
+        //         $('.pullDownArea').removeClass('areaStretch')
+        //     }, 0)
+        // })
+        // // 有诟病，在获得焦点后class类变得重复
+        // $('#CourtInput,.arror').click(function () {
+        //     console.log('click!')
+        //     $('.pullDownArea').toggleClass('show')
+        //     $('.arror').toggleClass('reverse')
+        //     setTimeout(function () {
+        //         $('.pullDownArea').toggleClass('areaStretch')
+        //         $('.pullDownArea').focus()
+        //     }, 0)
+        //     // pullDownAreaBlurClose =false
+        // })
+
         $('.pullDownArea').blur(function () {
             console.log('blur')
             $('.arror').removeClass('reverse')
             $('.pullDownArea').removeClass('show')
-            setTimeout(function(){
-                $('.pullDownArea').removeClass('areaStretch')
-            },0)
+            $('.pullDownArea').removeClass('areaStretch')
         })
-        // 有诟病，在获得焦点后class类变得重复
-        $('#CourtInput,.arror').mousedown(function () {
+        $("#CourtInput,.arror").on("mousedown",function(e) {
+                e.preventDefault();
+            })
+        // click和blur会先执行blur再执行click，导致点击input关闭的时候
+        // 关闭不了 === 监听mousedown事件取消浏览器默认事件可以阻止focus
+        $('#CourtInput,.arror').click(function () {
             console.log('click!')
-            $('.pullDownArea').addClass('show')
-                $('.arror').addClass('reverse')
-                setTimeout(function () {
-                    $('.pullDownArea').addClass('areaStretch')
-                    $('.pullDownArea').focus()
-                }, 0)
-
-            // pullDownAreaBlurClose =false
+            $('.pullDownArea').toggleClass('show')
+            $('.arror').toggleClass('reverse')
+            $('.pullDownArea').toggleClass('areaStretch')
+            $('.pullDownArea').focus()
+            // pullDownAreaBlurClose
         })
+
         $('.switchItem1').click(function () {
             $('.switchItem1').addClass('activeItem')
             $('.switchItem2').removeClass('activeItem')
