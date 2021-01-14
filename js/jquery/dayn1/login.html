@@ -1,0 +1,411 @@
+<!-- 基本登录页面，选择框的click和blur会有所冲突，无论是先click还是先blur -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- he is a shit master -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+    <title>福建法院人事综合管理平台</title>
+    <link rel="icon" href="./manCity.png" sizes="32x32">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .clothDress {
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            opacity: .55;
+        }
+
+        #loginBase {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-image: url(coolbg.jpg);
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .loginCloth {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            display: inline-block;
+            width: 700px;
+            height: 500px;
+        }
+
+        header {
+            overflow: hidden;
+            padding: 0 40px;
+        }
+
+        header h2 {
+            float: left;
+            font-size: 44px;
+            font-weight: 700;
+            text-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
+            line-height: 71px;
+            color: #fff;
+        }
+
+        header h2::before {
+            content: '';
+            float: left;
+            width: 71px;
+            height: 71px;
+            /* background-color: red; */
+            background-image: url('./manCity.png');
+            background-size: contain;
+        }
+
+        section {
+            background-color: #fff;
+            box-shadow: 0 0 3px #000;
+        }
+
+        .inputArea {
+            padding: 30px 100px;
+        }
+
+        .switchTab {}
+
+        .switchTab::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .switchItemCom {
+            float: left;
+            width: 50%;
+            text-align: center;
+            padding: 10px 0;
+            cursor: pointer;
+        }
+
+        .switchItemCom span {
+            font-size: 24px;
+        }
+
+        .switchItem1 {
+            /* background-color: #aabbcc;
+            color: #fff;
+            font-weight: 900; */
+        }
+
+        .activeItem {
+            background-color: #aabbcc;
+            color: #fff;
+            font-weight: 900;
+        }
+
+        .selectWrap {
+            position: absolute;
+            /* width: 100%;
+            height: 350px; */
+            width: 100%;
+            height: 100%;
+            top: -40px;
+        }
+
+        #selectCourt {
+            position: relative;
+        }
+
+        .pullDownArea {
+            content: '';
+            background-color: #aabbcc;
+            position: absolute;
+            top: 100%;
+            width: 0;
+            height: 0;
+            /* width: 100%;
+            height: 350px; */
+            padding: 10px;
+            font-size: 20px;
+            display: none;
+            opacity: 0;
+            transition: all 1s;
+            z-index: 233;
+        }
+
+        .pullDownArea li {
+            margin-top: 5px;
+            caret-color: transparent;
+            cursor: pointer;
+        }
+
+        .pullDownArea ul li:hover {
+            background-color: #c8a6ff;
+        }
+
+        .arror {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+
+        .inputArea {
+            margin-top: 10px;
+        }
+
+        .inputArea input,
+        #loginBase .dropdown {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            height: 40px;
+            margin-bottom: 20px;
+            border-radius: 20px
+        }
+
+        #loginBase .dropdown {
+            background-color: #fff;
+        }
+
+        #loginBase .btn-default {
+            line-height: 28px;
+            height: 40px;
+            border-radius: 20px;
+        }
+
+        #loginBase .btn-default:hover {
+            background-color: #fff;
+        }
+
+        .arrorTest {
+            display: inline-block;
+            background-color: red;
+            border: 20px solid greenyellow;
+        }
+
+        .subBut {
+            color: #fff;
+            margin: 0 auto;
+            width: 100%;
+            height: 50px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            background: linear-gradient(to right, rgb(152, 209, 255), rgb(0, 91, 165));
+            box-shadow: 0 0 1px #000;
+        }
+
+        .butArea {
+            position: relative;
+        }
+
+        footer {
+            position: fixed;
+            bottom: 10px;
+            transform: translateX(-50%);
+            left: 50%;
+            /* yin wei ni shi xiao pig */
+            margin: 0 auto;
+            color: #fff;
+        }
+
+        .icon {
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.15em;
+            fill: currentColor;
+            overflow: hidden;
+        }
+
+        .show {
+            opacity: 1;
+            display: block;
+        }
+
+        .areaStretch {
+            width: 100%;
+            height: 350px;
+        }
+
+        .reverse {
+            transform-origin: 50% 25%;
+            transform: rotate(180deg);
+        }
+
+        .parent {
+            position: relative;
+        }
+
+        .liArrow {
+            width: 25px;
+            height: 25px;
+            position: absolute;
+            right: 0;
+        }
+
+        .secondChoose {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            color: #00f;
+            display: none;
+        }
+
+        .secondChoose span {
+            cursor: pointer;
+        }
+
+        .secondChoose span:nth-child(2) {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="loginBase">
+        <div class="clothDress"></div>
+        <div class="loginCloth">
+            <header>
+                <div>
+                    <h2>福建法院人事综合管理平台</h2>
+                </div>
+            </header>
+            <section>
+                <div class="switchTab">
+                    <div class="switchItemCom switchItem1 activeItem"><span>在编人员</span></div>
+                    <div class="switchItemCom switchItem2"><span>编外人员</span></div>
+                </div>
+                <div class="inputArea">
+                    <div id="selectCourt">
+                        <input id="CourtInput" placeholder="请选择法院" />
+                        <svg class="icon arror" aria-hidden="true">
+                            <use xlink:href="#icondownArrow"></use>
+                        </svg>
+                        <div class="pullDownArea" contenteditable="true">
+                            <!-- <div class="selectWrap"></div> -->
+                            <ul>
+                            </ul>
+                        </div>
+                    </div>
+                    <input id="userName" placeholder="请输入用户名/身份证" />
+                    <input placeholder="请输入密码" />
+                    <div class="butArea">
+                        <div class="secondChoose">
+                            <span>还没有账号？立即注册</span>
+                            <span>找回密码</span>
+                        </div>
+                        <button class="subBut">立即登录</button>
+                    </div>
+                </div>
+        </div>
+        </section>
+        <footer>
+            <span>技术支持单位：杭州云嘉云计算有限公司|服务热线：0591-87087782</span>
+        </footer>
+    </div>
+    </div>
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+    <script src="./iconSymbol.js"></script>
+    <script>
+        const CourtArr = [
+            {
+                name: '福建高级人民法院'
+            },
+            {
+                name: '福州',
+                children: [
+                    {
+                        name: '福州市中级人民法院'
+                    },
+                    {
+                        name: '福州市鼓楼区人民法院'
+                    },
+                    {
+                        name: '福州市台江区人民法院'
+                    }
+                ]
+            },
+            {
+                name: '厦门',
+                children: [
+                    {
+                        name: '厦门中级人民法院'
+                    },
+                    {
+                        name: '厦门市思明区人民法院'
+                    }
+                ]
+            }
+        ]
+
+        CourtArr.forEach(item => {
+            $('.pullDownArea ul').append(`<li class='${item.name} parent'>${item.name}</li>`)
+            if (item.children) {
+                $(`.${item.name}`).append('<svg class="liArrow"><use xlink: href="#icondownArrow"></use></svg>')
+                item.children.forEach(chil => {
+                    $(`.${item.name}`).append(`<li class='${chil.name}'>${chil.name}</li>`)
+                    $(`.${chil.name}`).css('display', 'none')
+                    $(`.${item.name}`).click(function () {
+                        $(`.${chil.name}`).toggleClass('show')
+                    })
+                })
+            }
+        })
+        // 点击的区域
+        let pullDownAreaBlurClose = false
+        // 下拉区域blur事件 bs ni cai zhi dao ma 
+        $('.pullDownArea').blur(function () {
+            console.log('blur')
+            $('.arror').removeClass('reverse')
+            $('.pullDownArea').removeClass('show')
+            setTimeout(function(){
+                $('.pullDownArea').removeClass('areaStretch')
+            },0)
+        })
+        // 有诟病，在获得焦点后class类变得重复
+        $('#CourtInput,.arror').mousedown(function () {
+            console.log('click!')
+            $('.pullDownArea').addClass('show')
+                $('.arror').addClass('reverse')
+                setTimeout(function () {
+                    $('.pullDownArea').addClass('areaStretch')
+                    $('.pullDownArea').focus()
+                }, 0)
+
+            // pullDownAreaBlurClose =false
+        })
+        $('.switchItem1').click(function () {
+            $('.switchItem1').addClass('activeItem')
+            $('.switchItem2').removeClass('activeItem')
+            $('.secondChoose').hide()
+            $('#userName').attr('placeholder', '请输入用户名/身份证')
+        })
+        $('.switchItem2').click(function () {
+            $('.switchItem1').removeClass('activeItem')
+            $('.switchItem2').addClass('activeItem')
+            $('.secondChoose').show()
+            $('#userName').attr('placeholder', '请输入用户名/手机号')
+        })
+    </script>
+</body>
+
+</html>

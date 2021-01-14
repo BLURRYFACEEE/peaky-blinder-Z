@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function goodOrdie(obj) {
+            let isNill = false
+            const goodObj = {}
+            let item = null
+            Object.keys(obj).forEach(function (key) {
+                item = obj[key]
+                isNill = (item === null) || (item === undefined) || (item === '')
+                if (!isNill) {
+                    goodObj[key] = item
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

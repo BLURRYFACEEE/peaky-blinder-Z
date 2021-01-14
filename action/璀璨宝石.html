@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .greenDiamond {
+            display: inline-block;
+            background-color: greenyellow;
+            width: 0px;
+            height: 0px;
+            border-left: 100px solid #fff;
+            border-top: 100px solid red;
+            transform: rotate(-45deg);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+
+        .ruby {
+            --height: 300px;
+            --size: calc(var(--height) / var(--ratio));
+            --ratio: 1.5;
+            /* 15px */
+            --carat: 0.7;
+            --color-main: #711414;
+            --color-second: #660808;
+            --color-third: #9c0a0a;
+            --color-fourth: #ff2525;
+            --color-fiveth: #7d1818;
+            position: relative;
+            width: var(--size);
+            height: calc(var(--size) * var(--ratio));
+            background: linear-gradient(to right,
+                    var(--color-third) 0%,
+                    var(--color-main) 50%,
+                    var(--color-third) 50.01%,
+                    var(--color-second) 100%);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: inline-block;
+            margin: 5px;
+        }
+
+        /* .ruby:before {
+            content: " ";
+            position: absolute;
+            top: calc(((var(--size) * var(--ratio)) - (var(--size) * var(--ratio) * var(--carat))) / 2);
+            left: calc(var(--size) * ((1 - var(--carat)) / 2));
+            width: calc(var(--size) * var(--carat));
+            height: calc(var(--size) * var(--ratio) * var(--carat));
+            background: linear-gradient(90deg,
+                    var(--color-third) 0%,
+                    var(--color-fourth) 100%);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            display: block;
+            z-index: 10;
+        }
+
+        .ruby:after {
+            --border: calc((var(--size) * var(--ratio)) / 13.33);
+            content: " ";
+            position: absolute;
+            top: calc(((var(--size) * var(--ratio)) / 4));
+            left: 0px;
+            width: calc(var(--size) * var(--carat));
+            height: calc((var(--size) * var(--ratio) / 2) - (var(--border) * 2));
+            background-color: transparent;
+            display: block;
+            z-index: 5;
+            border-top: var(--border) solid transparent;
+            border-bottom: var(--border) solid transparent;
+            border-left: calc(var(--size) * ((1 - var(--carat)) / 2)) solid var(--color-fourth);
+            border-right: calc(var(--size) * ((1 - var(--carat)) / 2)) solid var(--color-fiveth);
+        } */
+        .clipTest {
+            display: inline-block;
+            --width: 300px;
+            --height: 300px;
+            height: var(--height);
+            width: var(--width);
+            background: linear-gradient( #ff0000, #00ff00, #0000ff);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <i class="greenDiamond"></i> -->
+    <!-- <i class="ruby"></i> -->
+    <i class="clipTest"></i>
+</body>
+
+</html>
