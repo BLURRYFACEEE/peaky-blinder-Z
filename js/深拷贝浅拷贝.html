@@ -235,15 +235,15 @@
         // 浅拷贝
         // 1 直接赋值
         // 2 Object.assign()赋值（可以处理对象一层深拷贝）
-        const a = {
-            name: 'hsz',
-            age: 18,
-            like: {
-                body: 'foot',
-                person: 11
-            }
-        }
-        const b = Object.assign({}, a)
+        // const a = {
+        //     name: 'hsz',
+        //     age: 18,
+        //     like: {
+        //         body: 'foot',
+        //         person: 11
+        //     }
+        // }
+        // const b = Object.assign({}, a)
         // a.like.body = 'hands'
         // console.log('浅拷贝：')
         // console.log(b)
@@ -304,11 +304,13 @@
             }
             return obj;
         }
-        var obj233 = {
-            a: 1,
-            b: { f: { g: 1 } },
-            c: [1, 2, 3]
+        var objInit = {
+          a: 1,
+          b: { f: { g: 1 } },
+          c: [1, 2, 3]
         }
+        var obj233 = deepClone(objInit)
+        objInit.a = 2333
         console.log(deepClone(obj233))
     </script>
 </body>

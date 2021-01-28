@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="file" id="file" style="display:none">
+        <button id="uploadBtn">上传</button>
+    </div>
+    <script>
+        const file = document.querySelector('#file')
+        const uploadBtn = document.querySelector('#uploadBtn')
+        uploadBtn.addEventListener('click',function(){
+            file.click()
+        })
+        file.onchange = function(event){
+            const fileTwo = event.target.files[0]
+            upload(fileTwo)
+        }
+        function upload(fileTwo){
+            const imgFormData = new FormData()
+            imgFormData.set('imgTwo',fileTwo)
+            const xhr = new XMLHttpRequest()
+            xhr.open('POST','http://127.0.0.1:3000/upload')
+            xhr.send(imgFormData)
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState ===4 && xhr.status ===200){
+                    alert('success')
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

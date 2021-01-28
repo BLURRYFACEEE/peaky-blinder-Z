@@ -175,6 +175,35 @@ export const constantRoutes = [
               title: '业务系统维护',
               roles: ['admin'] // or you can only set roles in sub nav
             }
+          },
+          {
+            path: 'systemManager',
+            // redirect: '/mr_Z/index',
+            meta: {
+              title: '系统管理',
+              icon: 'people',
+              roles: ['admin', 'editor'] // you can set roles in root nav
+            },
+            children: [
+              {
+                path: 'userManager',
+                component: () => import('@/views/mr_Z/systemManager/userManager'),
+                name: 'userManager',
+                meta: {
+                  title: '用户管理',
+                  roles: ['admin'] // or you can only set roles in sub nav
+                }
+              },
+              {
+                path: 'roleManager',
+                component: () => import('@/views/mr_Z/systemManager/roleManager'),
+                name: 'roleManager',
+                meta: {
+                  title: '角色管理',
+                  roles: ['admin'] // or you can only set roles in sub nav
+                }
+              }
+            ]
           }
         ]
       },

@@ -303,7 +303,7 @@
                         </div>
                     </div>
                     <input id="userName" placeholder="请输入用户名/身份证" />
-                    <input placeholder="请输入密码" />
+                    <input id="password" placeholder="请输入密码" />
                     <div class="butArea">
                         <div class="secondChoose">
                             <span>还没有账号？立即注册</span>
@@ -325,6 +325,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
     <script src="./iconSymbol.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script>
         const CourtArr = [
             {
@@ -367,30 +368,13 @@
                     $(`.${item.name}`).click(function () {
                         $(`.${chil.name}`).toggleClass('show')
                     })
+                    $(`.${chil.name}`).click(function () {
+                        $('#CourtInput').val(chil.name)
+                        // alert(chil.name)
+                    })
                 })
             }
         })
-        // 点击的区域
-        // 下拉区域blur事件 bs ni cai zhi dao ma 
-        // $('.pullDownArea').blur(function () {
-        //     console.log('blur')
-        //     $('.arror').removeClass('reverse')
-        //     $('.pullDownArea').removeClass('show')
-        //     setTimeout(function () {
-        //         $('.pullDownArea').removeClass('areaStretch')
-        //     }, 0)
-        // })
-        // // 有诟病，在获得焦点后class类变得重复
-        // $('#CourtInput,.arror').click(function () {
-        //     console.log('click!')
-        //     $('.pullDownArea').toggleClass('show')
-        //     $('.arror').toggleClass('reverse')
-        //     setTimeout(function () {
-        //         $('.pullDownArea').toggleClass('areaStretch')
-        //         $('.pullDownArea').focus()
-        //     }, 0)
-        //     // pullDownAreaBlurClose =false
-        // })
 
         $('.pullDownArea').blur(function () {
             console.log('blur')
@@ -398,9 +382,9 @@
             $('.pullDownArea').removeClass('show')
             $('.pullDownArea').removeClass('areaStretch')
         })
-        $("#CourtInput,.arror").on("mousedown",function(e) {
-                e.preventDefault();
-            })
+        $("#CourtInput,.arror").on("mousedown", function (e) {
+            e.preventDefault();
+        })
         // click和blur会先执行blur再执行click，导致点击input关闭的时候
         // 关闭不了 === 监听mousedown事件取消浏览器默认事件可以阻止focus
         $('#CourtInput,.arror').click(function () {
@@ -409,7 +393,6 @@
             $('.arror').toggleClass('reverse')
             $('.pullDownArea').toggleClass('areaStretch')
             $('.pullDownArea').focus()
-            // pullDownAreaBlurClose
         })
 
         $('.switchItem1').click(function () {
@@ -423,6 +406,19 @@
             $('.switchItem2').addClass('activeItem')
             $('.secondChoose').show()
             $('#userName').attr('placeholder', '请输入用户名/手机号')
+        })
+        $('.subBut').click(function () {
+            console.log($('#password').val())
+            // if ($('#CourtInput').val() === '福州市中级人民法院' && $('#userName').val() === '123' && $('#password').val() === '123'){
+                window.location.href='index.html'
+          const user = {}
+          const obj1 = {
+              userName:$('#userName').val(),
+            password:$('#password').val()
+          }
+          Object.assign(user,obj1)
+          Cookies.set('userInfo',user)
+            // }
         })
     </script>
 </body>
