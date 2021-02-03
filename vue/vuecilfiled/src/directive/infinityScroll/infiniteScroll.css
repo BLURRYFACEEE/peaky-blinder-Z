@@ -1,0 +1,34 @@
+.infinteArea {
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  outline: 16px solid #9dffef;
+  overflow: hidden;
+}
+.infinteArea ul li {
+  margin-top: 10px;
+  line-height: 40px;
+  background-color: #d1e7dd;
+}
+.infinteArea ul {
+  --setTime : 4s;
+  --finalTranslateY : -300px;
+
+  list-style: cjk-ideographic;
+  margin:16px 0;
+  animation: var(--setTime) ulUp linear infinite normal;
+}
+@keyframes ulUp{
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(var(--finalTranslateY));
+  }
+}
+
