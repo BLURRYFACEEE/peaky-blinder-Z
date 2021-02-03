@@ -7,8 +7,10 @@
     <title>Document</title>
     <style>
         .test1 {
-            width: 200px;
-            height: 200px;
+            width: 40px;
+            height: 40px;
+            border-top: 20px solid black;
+            border-left: 20px solid black;
             background-color: #aabbcc;
         }
     </style>
@@ -16,11 +18,12 @@
 
 <body>
     <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
-    <div class="test1"></div>
+    <div class="testArea">
+        <div class="test1">
+        </div>
+    </div>
     <script>
-        $('.test1').mouseover(function(){
-            alert('hgaha')
-        })
+var timer = requestAnimationFrame(function(){ console.log(0); });
     </script>
 </body>
 

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .infinteArea {
+      width: 400px;
+      height: 200px;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      outline: 16px solid #9dffef;
+      overflow: hidden;
+    }
+    .infinteArea ul {
+      list-style: cjk-ideographic;
+      animation: 4s ulUp linear infinite normal;
+    }
+    .infinteArea ul li {
+      margin-top: 10px;
+      line-height: 40px;
+      background-color: #d1e7dd;
+    }
+    .changeTimeArea {
+      margin: 100px auto;
+      width: 400px;
+    }
+  </style>
+</head>
+<body>
+<div id="index">
+  <div class="infinteArea">
+    <ul>
+      <li>1</li>
+      <li>2</li>
+<!--      <li>3</li>-->
+<!--      <li>4</li>-->
+<!--      <li>5</li>-->
+<!--      <li>6</li>-->
+<!--      <li>7</li>-->
+<!--      <li>8</li>-->
+<!--      <li>9</li>-->
+<!--      <li>10</li>-->
+<!--      <li>11</li>-->
+<!--      <li>12</li>-->
+<!--      <li>13</li>-->
+    </ul>
+  </div>
+  <div class="changeTimeArea">
+    <input type="text" id="changTime">
+    <button id="changTimeSub">改变滚动时间！（默认4）</button>
+  </div>
+</div>
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<script>
+// originJS()
+jquery()
+function originJS() {
+  let scrollTime = 4
+  const infinteAreaEle = document.querySelector('.infinteArea')
+  const changTimeSubEle = document.querySelector('#changTimeSub')
+  const changeTime = document.querySelector('#changTime')
+  const infiniteAreaUl = document.querySelector('.infinteArea ul')
+  const ulClone = infiniteAreaUl.cloneNode(true)
+  infinteAreaEle.append(ulClone)
+  console.log(infiniteAreaUl)
+  changTimeSubEle.onclick = function(){
+    scrollTime = changeTime.value || 4
+    infinteScroll(scrollTime)
+  }
+  infinteScroll(scrollTime)
+  function infinteScroll(setTime=5) {
+    const infiniteAreaUlStyle = window.getComputedStyle(infiniteAreaUl,null)
+    const infinteAreaEleStyle = window.getComputedStyle(infinteAreaEle,null)
+    let ulHeight = infiniteAreaUlStyle.height
+    let liMargin =infiniteAreaUlStyle.marginTop
+    let infinteAreaHeight = infinteAreaEleStyle.height
+    liMargin = liMargin.split('px')[0]
+    ulHeight = ulHeight.split('px')[0]
+    infinteAreaHeight =infinteAreaHeight.split('px')[0]
+    const finalTranslateY = parseInt(ulHeight) + parseInt(liMargin)
+    // console.log(finalTranslateY)
+    const runkeyframes =`
+    .infinteArea ul {
+      animation: ${setTime}s ulUp linear infinite normal;
+    }
+@keyframes ulUp{
+    0%{
+    transform: translateY(0);
+    }
+    100%{
+    transform: translateY(-${finalTranslateY}px);
+    }
+}`
+// 创建style标签
+    const style = document.createElement('style');
+// 设置style属性
+    style.type = 'text/css';
+// 将 keyframes样式写入style内
+    style.innerHTML = runkeyframes;
+// 将style样式存放到head标签
+    document.querySelector('head').appendChild(style);
+    checkFakeAppend()
+    function checkFakeAppend() {
+      if (parseInt(ulHeight)*2-parseInt(finalTranslateY) < parseInt(infinteAreaHeight)){
+        const appendTimes = Math.floor(infinteAreaHeight/ulHeight)
+        console.log(appendTimes)
+        for (var i =0;i<appendTimes;i++){
+          console.log('haha')
+          const ulClone = infiniteAreaUl.cloneNode(true)
+          infinteAreaEle.append(ulClone)
+        }
+      }
+    }
+  }
+}
+function jquery(){
+  let scrollTime = 4
+const ulClone = $('.infinteArea ul').clone()
+  $('.infinteArea')[0].append(ulClone[0])
+  $('#changTimeSub').click(function () {
+    scrollTime = $('#changTime').val() || 4
+    infinteScroll(scrollTime)
+  })
+  infinteScroll(scrollTime)
+  function infinteScroll(setTime=5) {
+    const ulHeight = $('.infinteArea ul').height()
+    let liMargin = $('.infinteArea ul').css('margin-top')
+    const infinteAreaHeight = $('.infinteArea').height()
+    liMargin = liMargin.split('px')[0]
+    const finalTranslateY = parseInt(ulHeight) + parseInt(liMargin)
+    const runkeyframes =`
+    .infinteArea ul {
+      animation: ${setTime}s ulUp linear infinite normal;
+    }
+@keyframes ulUp{
+    0%{
+    transform: translateY(0);
+    }
+    100%{
+    transform: translateY(-${finalTranslateY}px);
+    }
+}`
+// 创建style标签
+    const style = document.createElement('style');
+// 设置style属性
+    style.type = 'text/css';
+// 将 keyframes样式写入style内
+    style.innerHTML = runkeyframes;
+// 将style样式存放到head标签
+    document.querySelector('head').appendChild(style);
+    checkFakeAppend()
+    function checkFakeAppend() {
+      console.log(liMargin)
+      console.log(ulHeight)
+      if (ulHeight*2-finalTranslateY < infinteAreaHeight){
+        const appendTimes = Math.floor(infinteAreaHeight/ulHeight)
+        console.log(appendTimes)
+        for (var i =0;i<appendTimes;i++){
+          console.log('haha')
+          const ulClone = $('.infinteArea ul').clone()[0]
+          $('.infinteArea')[0].append(ulClone)
+        }
+      }
+    }
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>福建法院人事综合管理平台</title>
+  <link rel="icon" href="./manCity.png" type="image/x-icon"/>
+  <link rel="import" href="./test/test.html" id="page1">
+  <link rel="import" href="./test/test.html" id="page2"/>
+  <link rel="stylesheet" type="text/css" href="./indexBack.css">
+  <!-- 新 Bootstrap 核心 CSS 文件 -->
+  <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+
+  <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+
+  </style>
+</head>
+
+<body>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script src="./iconSymbol.js"></script>
+<div id="index">
+  <div class="sideBar">
+    <div class="sideBarWrap"></div>
+    <header>
+      <i></i>
+      <div class="title">
+        <div class="title1">福建法院</div>
+        <div class="title2">人事综合管理平台</div>
+      </div>
+    </header>
+    <div class="sectionScrollWrap section">
+      <section class="section">
+      </section>
+    </div>
+    <div class="rightArea"></div>
+  </div>
+  <div class="topBar">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="hamburg">
+          <svg class="icon humburgArror" aria-hidden="true"><use xlink:href="#iconMenu"></use></svg>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="navbar-text">您好，晋江市人民法院·黄雅彬</li>
+          <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-plus"></span></a></li>
+          <li><a href="#"><span class="glyphicon glyphicon-minus"></span></a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="MainBase">
+    <div class="breadcrumb">
+      <li class="bread1"><a href="#">法官绩效查询</a></li>
+      <li class="bread2"><a href="#">案件折算查询</a></li>
+    </div>
+    <div id="diffArea">
+      <div class="searchArea">
+        <form class="formArea" role="form">
+          <div class="row">
+            <div class="form-group">
+              <label for="responseClub" class="">承办部门：</label>
+              <select class="form-control diySelect">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="responseClub" class="">承办部门：</label>
+              <select class="form-control diySelect">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="responseClub" class="">承办部门：</label>
+              <select class="form-control diySelect">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="responseClub" class="">承办部门：</label>
+              <select class="form-control diySelect">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="manyInput">
+              <div class="form-group">
+                <label for="responseClub" class="">立案日期：</label>
+                <input class="form-control inputHalfWidth"><span style="padding: 0 4px;">-</span><input
+                      class="form-control inputHalfWidth">
+              </div>
+              <div class="form-group">
+                <label for="responseClub" class="">结案日期：</label>
+                <input class="form-control inputHalfWidth"><span style="padding: 0 4px;">-</span><input
+                      class="form-control inputHalfWidth">
+              </div>
+              <div class="form-group">
+                <label for="responseClub" class="">
+                  <div style="width: 85px;height: 2em;"><span style="float: right;">案号：</span></div>
+                </label>
+                <div style="float: right;margin-left: 3px;">
+                  <div class="initNumberSearch" style="float: left;">
+                    <div class="numberSearch1">
+                      <input class="form-control inputHalfWidth"><span
+                            style="padding: 0 2px;">闽</span><input class="form-control inputHalfWidth">
+                    </div>
+                    <input class="form-control inputHalfWidth"><span
+                          style="padding: 0 2px;">至</span><input class="form-control inputHalfWidth">
+                  </div>
+                  <div class="hideNumberSearch hide" style="float: left;">
+                    <select class="form-control diySelect">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                  </div>
+                  <div class="switchBtn">                                    <button class="btn btn-default" id="switchNumberSearch"
+                                                                                     style="float: left;" type="button">切换搜索</button></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" style="position: relative">
+            <div class="button-group">
+              <button class="btn btn-primary">查询</button>
+              <button class="btn btn-default"
+                      style="margin-left: 15px; background-color: rgb(231, 231, 231);">重置</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="tableArea">
+        <div class="doOptions">
+          <button class="btn" style="margin-right: 10px;"><svg class="icon downarrow" aria-hidden="true">
+            <use xlink:href="#icondownArrow"></use>
+          </svg>导出</button>
+          <button class="btn btn-primary" style="margin-right: 10px;"><svg class="icon downarrow"
+                                                                           aria-hidden="true">
+            <use xlink:href="#icondownArrow"></use>
+          </svg>导入</button>
+          <a>特殊计分导入模板</a>
+        </div>
+        <div class="tableShow" style="margin-top: 20px;">
+          <div class="table-responsive">
+            <table class="table table-bordered">
+              <thead>
+              <tr style="background-color: rgb(245, 245, 245);">
+                <th max-height="10" style="height: 10px;">序号</th>
+                <th>案号</th>
+                <th>案件类型</th>
+                <th style="width: 300px;">按键标题</th>
+                <th>承办部门</th>
+                <th>承办法官</th>
+                <th>法官助理</th>
+                <th>立案日期</th>
+                <th>结案日期</th>
+                <th>案件折算件</th>
+                <th>得分详情</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>1123213213213213123123213</td>
+                <td>(2020)闽0582行审336号</td>
+                <td>非诉行政行为申请执行审查案件案件案件案件案件案件案件案件案件案件案件案件案件件案件案件件案件案件件案件案件件</td>
+                <td>被申请人：许辉缘；申请人：晋江23333申请人：zssdggdddd</td>
+                <td>行政庭</td>
+                <td>叶佩芬</td>
+                <td></td>
+                <td>2020-12-08</td>
+                <td>2021-01-04</td>
+                <td>0</td>
+                <td>哈哈</td>
+              </tr>
+              <tr>
+                <td>1123213213213213123123213</td>
+                <td>(2020)闽0582行审336号</td>
+                <td>非诉行政行为申请执行审查案件案件案件案件案件案件案件案件案件案件案件案件案件件案件案件件案件案件件案件案件件</td>
+                <td>被申请人：许辉缘；申请人：晋江23333申请人：zssdggdddd</td>
+                <td>行政庭</td>
+                <td>叶佩芬</td>
+                <td></td>
+                <td>2020-12-08</td>
+                <td>2021-01-04</td>
+                <td>0</td>
+                <td>哈哈</td>
+              </tr>
+              <tr>
+                <td>1123213213213213123123213</td>
+                <td>(2020)闽0582行审336号</td>
+                <td>非诉行政行为申请执行审查案件案件案件案件案件案件案件案件案件案件案件案件案件件案件案件件案件案件件案件案件件</td>
+                <td>被申请人：许辉缘；申请人：晋江23333申请人：zssdggdddd</td>
+                <td>行政庭</td>
+                <td>叶佩芬</td>
+                <td></td>
+                <td>2020-12-08</td>
+                <td>2021-01-04</td>
+                <td>0</td>
+                <td>哈哈</td>
+              </tr>
+              <tr>
+                <td>1123213213213213123123213</td>
+                <td>(2020)闽0582行审336号</td>
+                <td>非诉行政行为申请执行审查案件案件案件案件案件案件案件案件案件案件案件案件案件件案件案件件案件案件件案件案件件</td>
+                <td>被申请人：许辉缘；申请人：晋江23333申请人：zssdggdddd</td>
+                <td>行政庭</td>
+                <td>叶佩芬</td>
+                <td></td>
+                <td>2020-12-08</td>
+                <td>2021-01-04</td>
+                <td>0</td>
+                <td>哈哈</td>
+              </tr>
+              <tr>
+                <td>1123213213213213123123213</td>
+                <td>(2020)闽0582行审336号</td>
+                <td>非诉行政行为申请执行审查案件案件案件案件案件案件案件案件案件案件案件案件案件件案件案件件案件案件件案件案件件</td>
+                <td>被申请人：许辉缘；申请人：晋江23333申请人：zssdggdddd</td>
+                <td>行政庭</td>
+                <td>叶佩芬</td>
+                <td></td>
+                <td>2020-12-08</td>
+                <td>2021-01-04</td>
+                <td>0</td>
+                <td>哈哈</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="pageArea">
+            <div class="pageNumShow" style="float: left;">
+              <div>显示第<span>1</span>到第<span>10</span>条记录，总共<span>62</span>条记录 每页显示
+                <div class="btn-group" role="group">
+                  <button type="button" class="btn btn-default dropdown-toggle"
+                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    10
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">10</a></li>
+                    <li><a href="#">20</a></li>
+                    <li><a href="#">50</a></li>
+                  </ul>
+                </div>
+                条记录
+              </div>
+            </div>
+            <div class="pageNumClick" style="float: right;">
+              <div class="btn-toolbar" role="toolbar" aria-label="1">
+                <button type="button" class="btn btn-default btn-page">1</button>
+                <button type="button" class="btn btn-default btn-page">2</button>
+                <button type="button" class="btn btn-default btn-page">3</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script src="./indexSidebarData.js"></script>
+<script>
+
+sideBar.forEach(item => {
+  $('section').append(`<ul class="${item.name}" title=${item.name}><svg class="icon iconlook" aria-hidden="true"><use xlink:href="#${item.icon}"></use></svg><span>${item.name}</span><div class="${item.name}smallArea smallArea"></div><svg class="icon arror" aria-hidden="true"><use xlink:href="#icondownArrow"></use></svg><a class="${item.name}233 ulWrap" href="${item.name}"></a></ul>`)
+  const firstTime = true
+  makeChildren(item.name, item.children,item.component,firstTime)
+  $(`.${item.name}233`).click(function (e) {
+    e.preventDefault()
+    $(`.${item.name}>.smallArea>li`).toggleClass('show')
+    $(`.${item.name}>.arror`)[0].classList.toggle('arrowRotate')
+  })
+})
+// 遍历得到侧边栏
+function makeChildren(ele, data,component,checkFirstTime) {
+  data.forEach(item => {
+    // 如果当前还有孩子
+    if (item.children) {
+      const width = $('.sideBar').width()
+      const children = `<li class="${item.name} usual listyle" title=${item.name} style="position: relative;"><span>${item.name}</span><svg class="icon arror" aria-hidden="true"><use xlink:href="#icondownArrow"></use></svg><a class="${item.name}233 ulWrap" href="${item.name}"></li>`
+      // 判断是否是第一次遍历就加入到smallArea中
+      if(checkFirstTime){
+        $(`.${ele}smallArea`).append(children)
+      }else {
+        $('.' + ele).append(children)
+      }
+      // $(`.${ele} .smallArea`).append(`<li class="${item.name}" title=${item.name}"><span>${item.name}</span><svg class="icon arror" aria-hidden="true"><use xlink:href="#icondownArrow"></use></svg><a class="${item.name}233 ulWrap" href="${item.name}"></li>`)
+      $(`.${item.name}`).click(function (e) {
+        const event = e || window.event
+        const href = event.target.getAttribute('href')
+        window.location.hash = '#' + href
+        event.preventDefault()
+        $(`.${item.name}>li`).toggleClass('show')
+        $(`.${item.name}>.arror`)[0].classList.toggle('arrowRotate')
+      })
+      makeChildren(item.name, item.children,'',false)
+      // 到底啦没孩子了
+    } else {
+      const nowComponent = item.component || '<div><h2>404</h2></div>'
+      const children = `<li class="${item.name} usual listyle" title=${item.name} style="position: relative;"><span>${item.name}</span><a class="${item.name}233 ulWrap" href="${item.name}"></li>`
+      if(checkFirstTime){
+        $(`.${ele}smallArea`).append(children)
+      }else {
+        $('.' + ele).append(children)
+      }
+      // $('.' + ele).append(`<li class="${item.name} usual" title=${item.name}"><span>${item.name}</span><a class="${item.name}233 ulWrap" href="${item.name}"></li>`)
+      $(`.${item.name}`).click(function (e) {
+        const event = e || window.event
+        const href = event.target.getAttribute('href')
+        // 这里是假hash，直接获得当前的component，显示在要变动的位置
+        window.location.hash = '#' + href
+        event.preventDefault()
+        e.stopPropagation()
+        prepareBreadCrumb($(`.${item.name}`))
+        // $('#diffArea')[0].innerHTML = nowComponent
+        $('#diffArea').load(`./test/机构管理.html`);
+        // js引入js
+        // let src = `./test/${href}.js`
+        // $(`.${item.name}>li`).toggleClass('show')
+        // var script = document.createElement('script')
+        // script.type = 'text/javascript';
+        // script.src = src
+        // script.check = true
+        // const head = document.getElementsByTagName('head')[0]
+        // const child = head.children[head.children.length-1]
+        // console.log(head.children)
+        // if(child.check) head.removeChild(child)
+        // document.getElementsByTagName('head')[0].appendChild(script);
+      })
+    }
+  })
+}
+loadRightCheck()
+/**
+ * 开启权限管理
+ * 通过window监听load事件，判断是否有Cookie，无Cookie（登录信息）就跳转去login~
+ */
+function loadRightCheck(){
+  window.addEventListener('load',function () {
+    // if(!Cookies.get('userInfo')){
+    //   window.location.href = 'login.html'
+    // }
+  })
+}
+
+hashListen()
+/**
+ * hash监听，页面点击链接跳转时，改变window.location.hash,从而可以开启监听事件，读取js-cookie的登录缓存，如果没有就跳转首页（关闭状态）
+ */
+function hashListen() {
+  // window.addEventListener('hashchange', function (e) {
+  //   console.log('e')
+  //   const url = e.newURL
+  //   const transUrl = decodeURI(url)
+  //   const finalUrlfinalUrl = transUrl.split('#')
+  //   console.log(Cookies.get('userInfo'))
+  //   if(!Cookies.get('userInfo')){
+  //     window.location.href = 'login.html'
+  //   }
+  // })
+}
+
+function getHashChange() {
+}
+function VueRouter(params) {
+  const vueRouter = {}
+  const routes = params.routes || []
+  // console.log('haha')
+  // console.log(routes)
+}
+new VueRouter({
+  routes: sideBar
+})
+sideBarToggle()
+function sideBarToggle() {
+  $('.humburgArror').click(humbergurClick)
+}
+listenWindow()
+function listenWindow() {
+  let smallState = false
+  window.onresize = function (e) {
+    if($(window).width()<761 && $(window).width()>475){
+      if (!smallState) humbergurClick()
+      smallState = true
+    }else {
+      if (smallState) humbergurClick()
+      smallState = false
+    }
+  }
+}
+function humbergurClick() {
+  $('.sideBar').toggleClass('smallSideBar')
+  $('.section').toggleClass('smallSection')
+  $('.sectionScrollWrap').toggleClass('smallSectionScrollWrap')
+  $('.section').toggleClass('smallSectionHegith')
+  $('.sideBar header').toggleClass('smallHeadcutPadding')
+  $('.sideBar header .title').toggleClass('hide')
+  $('.sideBar section>ul').children('span').toggleClass('hide')
+  $('#index .sideBar li').removeClass('show')
+  $('nav').toggleClass('smallNav')
+  const switchArrow = document.querySelector('.humburgArror')
+  console.log(switchArrow)
+  switchArrow.classList.toggle('arrowRotate')
+  // $('.humburgArror').toggleClass('humburgArrorClick')
+  // $('.humburgArror').classList.toggle('humburgArrorClick')
+  $('.MainBase').toggleClass('smallMainbase')
+  // $('.sideBar section>ul>.arror').toggleClass('smallStateArror')
+  // jquery无法添加class到svg元素
+  const ulArrorArray = document.querySelectorAll('.sideBar section>ul>.arror')
+  ulArrorArray.forEach(arror => {
+    arror.classList.toggle('hide')
+  })
+  // $('.sideBar section>ul').hover(function (e) {
+  //   $(`.sideBar section>ul>.smallArea`).toggleClass('smallAreaShow')
+  //   $(`.sideBar section>ul>.smallArea>li`).toggleClass('show')
+  // })
+  // $(`.sideBar section>ul a`).removeEventListener('click')
+  // MR_Z~~~~待优化，循环总是不好的 还有点击事件的增加和取消也要遍历
+  console.log($('#index').height())
+  // 添加和取消判断
+  let method = 'on'
+  if ($('.sideBar').width()===50) {
+    method = 'off'
+  }
+  // console.log(method)
+  sideBar.forEach(item => {
+    // 伸展状态
+    if (method === 'on'){
+      $(`.${item.name}`).unbind('mouseenter').unbind('mouseleave');
+      $(`.${item.name} .smallArea`).removeClass('smallAreaShow')
+      $(`.${item.name}233`).click(function (e) {
+        $(`.${item.name}>.smallArea>li`).toggleClass('show')
+        $(`.${item.name}>.arror`)[0].classList.toggle('arrowRotate')
+      })
+      // 压缩状态
+    }else {
+
+      $(`.${item.name}233`).off('click')
+      // 鼠标悬浮时
+      $(`.${item.name}`).mouseenter(function () {
+        $(`.${item.name}>.smallArea`).addClass('smallAreaShow')
+        $(`.${item.name}>.smallArea>li`).addClass('show')
+        const rightArea = $(`.${item.name}>.smallArea`).clone('true')
+        rightArea.append('<div class="hoverArea"></div>')
+        // console.log($(`.${item.name}`)[0].offsetTop)
+        // $(`.${item.name}>.smallArea`)[0].append($('.rightArea')[0].childNodes)
+        $('.sideBar .rightArea>.smallArea').remove()
+        $('.sideBar .rightArea').append(rightArea)
+        // $('.sideBar .rightArea').attr('check','true')
+        let relativeY = $(`.${item.name}`)[0].getBoundingClientRect().y
+        $('.sideBar .rightArea>.smallArea')[0].style.top = relativeY+'px'
+        if (relativeY+150 > $('#index').height()){
+          $('.sideBar .rightArea>.smallArea')[0].style.top = 'auto'
+          $('.sideBar .rightArea>.smallArea')[0].style.bottom = '0'
+        }
+        // if ($('.sideBar .rightArea>.smallArea')[0].style.top+150)
+      })
+      // MR_Z 待优化一直监听window内存占用天大！
+      $(`.${item.name}`).mouseleave(function () {
+        window.onmousemove = function(e){
+          let rightAreaHeight = $(`.rightArea>.smallArea`).height()
+          if ((e.pageX>50 && (e.pageY<$(`.${item.name}`)[0].offsetTop) ||(e.pageY>$(`.${item.name}`)[0].offsetTop+rightAreaHeight+50)||(e.pageX>290))){
+            $(`.rightArea>.smallArea`).removeClass('smallAreaShow')
+            $(`.rightArea>.smallArea>li`).removeClass('show')
+          }
+        }
+        // $(`.${item.name},.sideBar .rightArea`).mouseleave(function () {
+        //   $(`.rightArea>.smallArea`).toggleClass('smallAreaShow')
+        //   $(`.rightArea>.smallArea>li`).toggleClass('show')
+        // })
+      })
+    }
+    $(`.${item.name}233`).click(function (e) {
+      e.preventDefault()
+    })
+    // MR_Z~~`待优化，加入smallArea以后阻止冒泡无效
+
+  })
+}
+function prepareBreadCrumb(clickEle) {
+  $('.breadcrumb').empty()
+  var parent = clickEle[0].parentElement
+  var breadArr = []
+  breadArr.unshift(clickEle[0].title)
+  var breadcrumbs = getBreadcrumb(parent, parent.title, breadArr)
+  // 添加面包屑动画效果
+  breadcrumbs.forEach((crumb, index) => {
+    $('.breadcrumb').append(`<li class="bread${index}" style="display:none"><a>${crumb}</a></li>`)
+    $(`.breadcrumb .bread${index}`).fadeIn((index + 1) * 1000)
+  })
+}
+function getBreadcrumb(ele, title, breadArr) {
+  var parent = ele.parentElement
+  breadArr.unshift(title)
+  if (parent.title.length === 0) return breadArr;
+  return getBreadcrumb(parent, parent.title, breadArr)
+}
+//案号搜索切换元素样式
+$('#switchNumberSearch').click(function () {
+  $('.initNumberSearch').toggleClass('hide')
+  $('.hideNumberSearch').toggleClass('hide')
+})
+$('.btn-page').click(function () {
+  console.log(this.textContent)
+  var pageNum = this.textContent
+  var xhr = new XMLHttpRequest()
+  xhr.open('get', 'http://127.0.0.1:3000/getData/soccerMate?pageNum=' + pageNum)
+  xhr.send()
+  xhr.onreadystatechange = function () {
+    if (xhr.status === 200 && xhr.readyState === 4) {
+      console.log(xhr.response)
+    }
+  }
+})
+</script>
+</html>

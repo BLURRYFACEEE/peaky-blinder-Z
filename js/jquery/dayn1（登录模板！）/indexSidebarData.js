@@ -16,6 +16,14 @@ const sideBar = [
           {
             name: '哈哈管理',
             ischild: false,
+          },
+          {
+            name: '哈哈管理2',
+            ischild: false,
+          },
+          {
+            name: '哈哈管理3',
+            ischild: false,
           }
         ]
       },
@@ -52,16 +60,16 @@ const sideBar = [
     icon: 'iconchange',
     children: [
       {
-        name: '挂职借调管理',
+        name: '挂职借调管理2',
         ischild: false,
         component: '<div><h2>挂职借调管理!!!!<h2></div>'
       },
       {
-        name: '在编人事管理',
+        name: '在编人事管理2',
         ischild: false,
       },
       {
-        name: '编外人士管理',
+        name: '编外人士管理2',
         ischild: false,
       },
     ]
@@ -72,16 +80,16 @@ const sideBar = [
     icon: 'iconchange',
     children: [
       {
-        name: '挂职借调管理',
+        name: '挂职借调管理3',
         ischild: false,
         component: '<div><h2>挂职借调管理!!!!<h2></div>'
       },
       {
-        name: '在编人事管理',
+        name: '在编人事管理3',
         ischild: false,
       },
       {
-        name: '编外人士管理',
+        name: '编外人士管理3',
         ischild: false,
       },
     ]
@@ -92,16 +100,16 @@ const sideBar = [
     icon: 'iconchange',
     children: [
       {
-        name: '挂职借调管理',
+        name: '挂职借调管理4',
         ischild: false,
         component: '<div><h2>挂职借调管理!!!!<h2></div>'
       },
       {
-        name: '在编人事管理',
+        name: '在编人事管理4',
         ischild: false,
       },
       {
-        name: '编外人士管理',
+        name: '编外人士管理4',
         ischild: false,
       },
     ]
@@ -112,16 +120,16 @@ const sideBar = [
     icon: 'iconchange',
     children: [
       {
-        name: '挂职借调管理',
+        name: '挂职借调管理5',
         ischild: false,
         component: '<div><h2>挂职借调管理!!!!<h2></div>'
       },
       {
-        name: '在编人事管理',
+        name: '在编人事管理5',
         ischild: false,
       },
       {
-        name: '编外人士管理',
+        name: '编外人士管理5',
         ischild: false,
       },
     ]
@@ -132,16 +140,16 @@ const sideBar = [
     icon: 'iconchange',
     children: [
       {
-        name: '挂职借调管理',
+        name: '挂职借调管理6',
         ischild: false,
         component: '<div><h2>挂职借调管理!!!!<h2></div>'
       },
       {
-        name: '在编人事管理',
+        name: '在编人事管理6',
         ischild: false,
       },
       {
-        name: '编外人士管理',
+        name: '编外人士管理6',
         ischild: false,
       },
     ]
@@ -152,16 +160,16 @@ const sideBar = [
     icon: 'iconchange',
     children: [
       {
-        name: '挂职借调管理',
+        name: '挂职借调管理7',
         ischild: false,
         component: '<div><h2>挂职借调管理!!!!<h2></div>'
       },
       {
-        name: '在编人事管理',
+        name: '在编人事管理7',
         ischild: false,
       },
       {
-        name: '编外人士管理',
+        name: '编外人士管理7',
         ischild: false,
       },
     ]
@@ -172,16 +180,16 @@ const sideBar = [
     icon: 'iconchange',
     children: [
       {
-        name: '挂职借调管理',
+        name: '挂职借调管理8',
         ischild: false,
         component: '<div><h2>挂职借调管理!!!!<h2></div>'
       },
       {
-        name: '在编人事管理',
+        name: '在编人事管理8',
         ischild: false,
       },
       {
-        name: '编外人士管理',
+        name: '编外人士管理8',
         ischild: false,
       },
     ]
@@ -192,16 +200,16 @@ const sideBar = [
     icon: 'iconchange',
     children: [
       {
-        name: '挂职借调管理',
+        name: '挂职借调管理9',
         ischild: false,
         component: '<div><h2>挂职借调管理!!!!<h2></div>'
       },
       {
-        name: '在编人事管理',
+        name: '在编人事管理9',
         ischild: false,
       },
       {
-        name: '编外人士管理',
+        name: '编外人士管理9',
         ischild: false,
       },
     ]
@@ -212,16 +220,16 @@ const sideBar = [
     icon: 'iconchange',
     children: [
       {
-        name: '挂职借调管理',
+        name: '挂职借调管理10',
         ischild: false,
         component: '<div><h2>挂职借调管理!!!!<h2></div>'
       },
       {
-        name: '在编人事管理',
+        name: '在编人事管理10',
         ischild: false,
       },
       {
-        name: '编外人士管理',
+        name: '编外人士管理10',
         ischild: false,
       },
     ]
@@ -232,16 +240,16 @@ const sideBar = [
     icon: 'iconchange',
     children: [
       {
-        name: '挂职借调管理',
+        name: '挂职借调管理11',
         ischild: false,
         component: '<div><h2>挂职借调管理!!!!<h2></div>'
       },
       {
-        name: '在编人事管理',
+        name: '在编人事管理11',
         ischild: false,
       },
       {
-        name: '编外人士管理',
+        name: '编外人士管理11',
         ischild: false,
       },
     ]
@@ -252,16 +260,16 @@ const sideBar = [
     icon: 'iconchange',
     children: [
       {
-        name: '挂职借调管理',
+        name: '挂职借调管理12',
         ischild: false,
         component: '<div><h2>挂职借调管理!!!!<h2></div>'
       },
       {
-        name: '在编人事管理',
+        name: '在编人事管理12',
         ischild: false,
       },
       {
-        name: '编外人士管理',
+        name: '编外人士管理12',
         ischild: false,
       },
     ]
@@ -272,16 +280,16 @@ const sideBar = [
     icon: 'iconchange',
     children: [
       {
-        name: '挂职借调管理',
+        name: '挂职借调管理13',
         ischild: false,
         component: '<div><h2>挂职借调管理!!!!<h2></div>'
       },
       {
-        name: '在编人事管理',
+        name: '在编人事管理13',
         ischild: false,
       },
       {
-        name: '编外人士管理',
+        name: '编外人士管理13',
         ischild: false,
       },
     ]
@@ -292,16 +300,16 @@ const sideBar = [
     icon: 'iconchange',
     children: [
       {
-        name: '挂职借调管理',
+        name: '挂职借调管理14',
         ischild: false,
         component: '<div><h2>挂职借调管理!!!!<h2></div>'
       },
       {
-        name: '在编人事管理',
+        name: '在编人事管理14',
         ischild: false,
       },
       {
-        name: '编外人士管理',
+        name: '编外人士管理14',
         ischild: false,
       },
     ]
@@ -312,16 +320,16 @@ const sideBar = [
     icon: 'iconchange',
     children: [
       {
-        name: '挂职借调管理',
+        name: '挂职借调管理15',
         ischild: false,
         component: '<div><h2>挂职借调管理!!!!<h2></div>'
       },
       {
-        name: '在编人事管理',
+        name: '在编人事管理15',
         ischild: false,
       },
       {
-        name: '编外人士管理',
+        name: '编外人士管理15',
         ischild: false,
       },
     ]

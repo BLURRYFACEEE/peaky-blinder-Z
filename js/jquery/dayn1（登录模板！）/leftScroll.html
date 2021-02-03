@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+    .floatLeft {
+      float: left;
+    }
+    .floatRight {
+      float: right;
+    }
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+    }
+    .arrow {
+      height: 40px;
+      padding-right: 5px;
+    }
+    ul {
+      list-style: none;
+    }
+    ul {
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+    }
+    ul a{
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    ul:hover{
+      background-color: #d1e7dd;
+    }
+    .leftScroll {
+      width: 200px;
+      background-color: #aabbcc;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<script src="./indexSidebarData.js"></script>
+<script src="./iconSymbol.js"></script>
+<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+<div class="main">
+  <div class="leftScroll floatLeft">
+  </div>
+</div>
+<script>
+sideBar.forEach( (item,index) => {
+  if (item.ischild) {
+    let appendLi = `<ul class="openUl"><a href="#"><span>${item.name}</span><svg class="icon arrow floatRight" aria-hidden="true"><use xlink:href="#icondownArrow"></use></svg></a></ul>`
+    $('.leftScroll').append(appendLi)
+    makeChildren(item.children,index)
+  }
+  else {
+    let appendLi = `<li class="endLi"><a href="#"><span>${item.name}</span><svg class="icon arrow floatRight" aria-hidden="true"><use xlink:href="#icondownArrow"></use></svg></a></li>`
+    $('.leftScroll').append(appendLi)
+  }
+} )
+function makeChildren(data,dadIcon) {
+  console.log(dadIcon)
+  data.forEach( (item)=> {
+    if (item.ischild) {
+      let appendLi = `<ul class="openUl"><a href="#"><span>${item.name}</span><svg class="icon arrow floatRight" aria-hidden="true"><use xlink:href="#icondownArrow"></use></svg></a></ul>`
+      // console.log('hahah')
+      $('.leftScroll').append(appendLi)
+      makeChildren(item.children,appendLi)
+    }
+    else {
+      let appendLi = `<li class="endLi"><a href="#"><span>${item.name}</span><svg class="icon arrow floatRight" aria-hidden="true"><use xlink:href="#icondownArrow"></use></svg></a></li>`
+      $(dadIcon).append(appendLi)
+    }
+  } )
+}
+</script>
+</body>
+</html>
